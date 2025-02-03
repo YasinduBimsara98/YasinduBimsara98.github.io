@@ -9,57 +9,403 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="">
     <header>
-        <div class="container">
-            <h1>Your Name</h1>
-            <p>Web Developer | Designer | Creative Thinker</p>
+        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+        <div class="container visible-on-large invisible-on-small">
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
+
+        <div class="container invisible-on-large visible-on-small">
+            <div class="mobile-menu">
+                <div class="menu-icon">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <nav>
+                    <ul class="mobile-nav">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>Hello! I'm a passionate web developer with experience in building modern, responsive websites. I love
-                turning ideas into reality through code.</p>
+    <script>
+        // Get the elements
+        const menuIcon = document.querySelector('.menu-icon');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+
+        // Toggle the menu when the menu icon is clicked
+        menuIcon.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent click event from propagating to document
+            mobileMenu.classList.toggle('open'); // Toggle the 'open' class to show/hide the menu
+        });
+
+        // Close the menu if any link is clicked
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
+        });
+
+        // Close the menu if anywhere else on the page is clicked
+        document.addEventListener('click', (event) => {
+            // Close menu only if the click is outside the mobile menu and icon
+            if (!mobileMenu.contains(event.target) && !menuIcon.contains(event.target)) {
+                mobileMenu.classList.remove('open');
+            }
+        });
+    </script>
+
+    <div class="profile">
+        <div class="header-overlay"></div>
+        <h1 class="profile-data">Yasindu Bimsara</h1>
+        <p class="profile-data">Web Developer | Designer | Creative Thinker</p>
+        <!-- <div>
+        </div> -->
+        <div class="header-image">
+            <img class="header-image-img" src="assets/images/my1.jpeg" alt="me">
+        </div>
+    </div>
+
+    <!-- <section id="about" class="section">
+        <div class="container about">
+            <div>
+                <h2>About Me</h2>
+                <p>Hello! I'm a passionate web developer with experience in building modern, responsive websites. I love
+                    turning ideas into reality through code. My base passion is Laravel & React. I really like to work on
+                    these frameworks. I have 2 and half year experience in these frameworks. 
+                </p>
+            </div>
+            <div>
+                <img class="about-img" src="assets/images/about.avif" alt="">
+            </div>
+        </div>
+    </section> -->
+
+    <section id="about" class="section fade-in">
+        <div class="container about scroll-content">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>
+                    Hello! I'm a passionate web developer with experience in building modern, responsive websites.
+                    I love turning ideas into reality through code. My base passion is Laravel & React.
+                    I really like to work on these frameworks. I have 2 and half years of experience in these
+                    frameworks.
+                </p>
+            </div>
+            <div class="about-img-wrapper">
+                <img class="about-img" src="assets/images/about.avif" alt="About Me">
+            </div>
         </div>
     </section>
 
-    <section id="projects" class="section">
+
+    <section id="skills" class="section fade-in">
+        <div class="container">
+            <div>
+                <h2>Skills</h2>
+                <ul class="skills fade-in">
+                    <li><span>PHP</span></li>
+                    <li><span>Laravel</span></li>
+                    <li><span>React</span></li>
+                    <li><span>TypeScript</span></li>
+                    <li><span>JavaScript</span></li>
+                    <li><span>HTML</span></li>
+                    <li><span>Tailwind CSS</span></li>
+                    <li><span>Bootstrap CSS</span></li>
+                    <li><span>MySQL</span></li>
+                    <li><span>GIT</span></li>
+                    <li><span>Git Hub</span></li>
+                    <li><span>Jira</span></li>
+                    <li><span>Trello</span></li>
+                    <li><span>Slack</span></li>
+                    <li><span>Figma</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section fade-in">
         <div class="container">
             <h2>Projects</h2>
+            <h5>As a employer</h5>
             <div class="project-grid">
                 <div class="project-card">
-                    <h3>Project 1</h3>
-                    <p>Description of Project 1.</p>
-                    <a href="#" class="btn">View Project</a>
+                    <div class="wonder-waves"></div>
+                    <div class="wonder-waves-black"></div>
+                    <h3>Wonder Waves</h3>
+                    <p>A tourism web platform</p>
+                    <a href="https://wonderwaves.lk/" target="_blank" class="btn">
+                        <div>
+                            <span>
+                                View Project
+                            </span>
+                        </div>
+                    </a>
                 </div>
                 <div class="project-card">
-                    <h3>Project 2</h3>
-                    <p>Description of Project 2.</p>
-                    <a href="#" class="btn">View Project</a>
+                    <div class="joduwa"></div>
+                    <div class="joduwa-black"></div>
+                    <h3>Joduwa</h3>
+                    <p>A dating web platform</p>
+                    <a href="https://joduwa.lk/" class="btn" target="_blank">
+                        <div>
+                            <span>
+                                View Project
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <div class="vishwaya"></div>
+                    <div class="vishwaya-black"></div>
+                    <h3>Vishwaya</h3>
+                    <p>An astro blogging web platform</p>
+                    <a href="" class="btn disable" target="_blank">
+                        <div>
+                            <span>
+                                View Project
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <div class="delifina"></div>
+                    <div class="delifina-black"></div>
+                    <h3>Delifina</h3>
+                    <p>An e-commerce web platform</p>
+                    <a href="#" class="btn" target="_blank">
+                        <div>
+                            <span>
+                                View Project
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <div class="ibiza"></div>
+                    <div class="ibiza-black"></div>
+                    <h3>Ibiza</h3>
+                    <p>A boat rental web platform</p>
+                    <a href="#" class="btn" target="_blank">
+                        <div>
+                            <span>
+                                View Project
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <div class="delanka"></div>
+                    <div class="delanka-black"></div>
+                    <h3>DE Lanka</h3>
+                    <p>An ERP web platform</p>
+                    <a href="#" class="btn disable" target="_blank">
+                        <div>
+                            <span>
+                                View Project
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <h5 class="personal">Personal Projects</h5>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="slblog"></div>
+                    <div class="slblog-black"></div>
+                    <h3>Blogging Project</h3>
+                    <p>A social blogging web platform</p>
+                    <a href="" target="_blank" class="btn pending">
+                        <div>
+                            <span>
+                                Pending
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <div class="ceylon"></div>
+                    <div class="ceylon-black"></div>
+                    <h3>Tourism Project</h3>
+                    <p>A tourism web platform</p>
+                    <a href="" class="btn pending" target="_blank">
+                        <div>
+                            <span>
+                                Pending
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <div class="ecom"></div>
+                    <div class="ecom-black"></div>
+                    <h3>E-commerce Project</h3>
+                    <p>An e-commerce web platform</p>
+                    <a href="" class="btn pending" target="_blank">
+                        <div>
+                            <span>
+                                Pending
+                            </span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section">
+    <section id="contact" class="section fade-in">
         <div class="container">
             <h2>Contact Me</h2>
-            <p>Feel free to reach out to me at <a href="mailto:youremail@example.com">youremail@example.com</a>.</p>
+            <p>Feel free to reach out to me at.</p>
+            <div class="contact contact-icon">
+                <a href="mailto:yasindubimsara1@gmail.com" target="_blank">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="88" height="88"
+                            viewBox="0 0 48 48">
+                            <path fill="#1e88e5"
+                                d="M34,42H14c-4.411,0-8-3.589-8-8V14c0-4.411,3.589-8,8-8h20c4.411,0,8,3.589,8,8v20 C42,38.411,38.411,42,34,42z">
+                            </path>
+                            <path fill="#fff"
+                                d="M35.926,17.488L29.414,24l6.511,6.511C35.969,30.347,36,30.178,36,30V18 C36,17.822,35.969,17.653,35.926,17.488z M26.688,23.899l7.824-7.825C34.347,16.031,34.178,16,34,16H14 c-0.178,0-0.347,0.031-0.512,0.074l7.824,7.825C22.795,25.38,25.205,25.38,26.688,23.899z M24,27.009 c-1.44,0-2.873-0.542-3.99-1.605l-6.522,6.522C13.653,31.969,13.822,32,14,32h20c0.178,0,0.347-0.031,0.512-0.074l-6.522-6.522 C26.873,26.467,25.44,27.009,24,27.009z M12.074,17.488C12.031,17.653,12,17.822,12,18v12c0,0.178,0.031,0.347,0.074,0.512 L18.586,24L12.074,17.488z">
+                            </path>
+                        </svg>
+                        <div>
+                            yasindubimsara1@gmail.com
+                        </div>
+                    </span>
+                </a>
+                <a href="https://wa.me/+94768927288?text=Hello%20there!" target="_blank">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="88" height="88"
+                            viewBox="0 0 48 48">
+                            <path fill="#fff"
+                                d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z">
+                            </path>
+                            <path fill="#fff"
+                                d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z">
+                            </path>
+                            <path fill="#cfd8dc"
+                                d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z">
+                            </path>
+                            <path fill="#40c351"
+                                d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z">
+                            </path>
+                            <path fill="#fff" fill-rule="evenodd"
+                                d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <div>
+                            +94768927288
+                        </div>
+                    </span>
+                </a>
+                <a href="tel:+94768927288" target="_blank">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="88" height="88"
+                            viewBox="0 0 48 48">
+                            <path fill="#0f0"
+                                d="M13,42h22c3.866,0,7-3.134,7-7V13c0-3.866-3.134-7-7-7H13c-3.866,0-7,3.134-7,7v22	C6,38.866,9.134,42,13,42z">
+                            </path>
+                            <path fill="#fff"
+                                d="M35.45,31.041l-4.612-3.051c-0.563-0.341-1.267-0.347-1.836-0.017c0,0,0,0-1.978,1.153	c-0.265,0.154-0.52,0.183-0.726,0.145c-0.262-0.048-0.442-0.191-0.454-0.201c-1.087-0.797-2.357-1.852-3.711-3.205	c-1.353-1.353-2.408-2.623-3.205-3.711c-0.009-0.013-0.153-0.193-0.201-0.454c-0.037-0.206-0.009-0.46,0.145-0.726	c1.153-1.978,1.153-1.978,1.153-1.978c0.331-0.569,0.324-1.274-0.017-1.836l-3.051-4.612c-0.378-0.571-1.151-0.722-1.714-0.332	c0,0-1.445,0.989-1.922,1.325c-0.764,0.538-1.01,1.356-1.011,2.496c-0.002,1.604,1.38,6.629,7.201,12.45l0,0l0,0l0,0l0,0	c5.822,5.822,10.846,7.203,12.45,7.201c1.14-0.001,1.958-0.248,2.496-1.011c0.336-0.477,1.325-1.922,1.325-1.922	C36.172,32.192,36.022,31.419,35.45,31.041z">
+                            </path>
+                        </svg>
+                        <div>
+                            +94768927288
+                        </div>
+                    </span>
+                </a>
+            </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 Your Name. All rights reserved.</p>
+            <p>&copy; <span id="current-year"></span> Yasindu Bimsara. All rights reserved.</p>
+            <script>
+                // Get the current year
+                var currentYear = new Date().getFullYear();
+
+                // Set the current year in the span element
+                document.getElementById("current-year").textContent = currentYear;
+            </script>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/yasindu-bimsara-ab37331a2" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28" viewBox="0 0 48 48">
+                        <path fill="#0288D1"
+                            d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z">
+                        </path>
+                        <path fill="#FFF"
+                            d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z">
+                        </path>
+                    </svg></a>
+                <a href="https://github.com/YasinduBimsara98" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="28px" height="28px">
+                    <linearGradient id="KpzH_ttTMIjq8dhx1zD2pa" x1="30.999" x2="30.999" y1="16" y2="55.342"
+                        gradientUnits="userSpaceOnUse" spreadMethod="reflect">
+                        <stop offset="0" stop-color="#6dc7ff" />
+                        <stop offset="1" stop-color="#e6abff" />
+                    </linearGradient>
+                    <path fill="url(#KpzH_ttTMIjq8dhx1zD2pa)"
+                        d="M25.008,56.007c-0.003-0.368-0.006-1.962-0.009-3.454l-0.003-1.55 c-6.729,0.915-8.358-3.78-8.376-3.83c-0.934-2.368-2.211-3.045-2.266-3.073l-0.124-0.072c-0.463-0.316-1.691-1.157-1.342-2.263 c0.315-0.997,1.536-1.1,2.091-1.082c3.074,0.215,4.63,2.978,4.694,3.095c1.569,2.689,3.964,2.411,5.509,1.844 c0.144-0.688,0.367-1.32,0.659-1.878C20.885,42.865,15.27,40.229,15.27,30.64c0-2.633,0.82-4.96,2.441-6.929 c-0.362-1.206-0.774-3.666,0.446-6.765l0.174-0.442l0.452-0.144c0.416-0.137,2.688-0.624,7.359,2.433 c1.928-0.494,3.969-0.749,6.074-0.759c2.115,0.01,4.158,0.265,6.09,0.759c4.667-3.058,6.934-2.565,7.351-2.433l0.451,0.145 l0.174,0.44c1.225,3.098,0.813,5.559,0.451,6.766c1.618,1.963,2.438,4.291,2.438,6.929c0,9.591-5.621,12.219-10.588,13.087 c0.563,1.065,0.868,2.402,0.868,3.878c0,1.683-0.007,7.204-0.015,8.402l-2-0.014c0.008-1.196,0.015-6.708,0.015-8.389 c0-2.442-0.943-3.522-1.35-3.874l-1.73-1.497l2.274-0.253c5.205-0.578,10.525-2.379,10.525-11.341c0-2.33-0.777-4.361-2.31-6.036 l-0.43-0.469l0.242-0.587c0.166-0.401,0.894-2.442-0.043-5.291c-0.758,0.045-2.568,0.402-5.584,2.447l-0.384,0.259l-0.445-0.123 c-1.863-0.518-3.938-0.796-6.001-0.806c-2.052,0.01-4.124,0.288-5.984,0.806l-0.445,0.123l-0.383-0.259 c-3.019-2.044-4.833-2.404-5.594-2.449c-0.935,2.851-0.206,4.892-0.04,5.293l0.242,0.587l-0.429,0.469 c-1.536,1.681-2.314,3.712-2.314,6.036c0,8.958,5.31,10.77,10.504,11.361l2.252,0.256l-1.708,1.49 c-0.372,0.325-1.03,1.112-1.254,2.727l-0.075,0.549l-0.506,0.227c-1.321,0.592-5.839,2.162-8.548-2.485 c-0.015-0.025-0.544-0.945-1.502-1.557c0.646,0.639,1.433,1.673,2.068,3.287c0.066,0.19,1.357,3.622,7.28,2.339l1.206-0.262 l0.012,3.978c0.003,1.487,0.006,3.076,0.009,3.444L25.008,56.007z" />
+                    <linearGradient id="KpzH_ttTMIjq8dhx1zD2pb" x1="32" x2="32" y1="5" y2="59.167" gradientUnits="userSpaceOnUse"
+                        spreadMethod="reflect">
+                        <stop offset="0" stop-color="#1a6dff" />
+                        <stop offset="1" stop-color="#c822ff" />
+                    </linearGradient>
+                    <path fill="url(#KpzH_ttTMIjq8dhx1zD2pb)"
+                        d="M32,58C17.663,58,6,46.337,6,32S17.663,6,32,6s26,11.663,26,26S46.337,58,32,58z M32,8 C18.767,8,8,18.767,8,32s10.767,24,24,24s24-10.767,24-24S45.233,8,32,8z" />
+                </svg></a>
+                <a href="https://www.instagram.com/yb_mohotti_98?igsh=dm04NDFjdGF6OXZm" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28" viewBox="0 0 48 48">
+                    <radialGradient id="yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1" cx="19.38" cy="42.035" r="44.899"
+                        gradientUnits="userSpaceOnUse">
+                        <stop offset="0" stop-color="#fd5"></stop>
+                        <stop offset=".328" stop-color="#ff543f"></stop>
+                        <stop offset=".348" stop-color="#fc5245"></stop>
+                        <stop offset=".504" stop-color="#e64771"></stop>
+                        <stop offset=".643" stop-color="#d53e91"></stop>
+                        <stop offset=".761" stop-color="#cc39a4"></stop>
+                        <stop offset=".841" stop-color="#c837ab"></stop>
+                    </radialGradient>
+                    <path fill="url(#yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1)"
+                        d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z">
+                    </path>
+                    <radialGradient id="yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2" cx="11.786" cy="5.54" r="29.813"
+                        gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse">
+                        <stop offset="0" stop-color="#4168c9"></stop>
+                        <stop offset=".999" stop-color="#4168c9" stop-opacity="0"></stop>
+                    </radialGradient>
+                    <path fill="url(#yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2)"
+                        d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z">
+                    </path>
+                    <path fill="#fff"
+                        d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z">
+                    </path>
+                    <circle cx="31.5" cy="16.5" r="1.5" fill="#fff"></circle>
+                    <path fill="#fff"
+                        d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z">
+                    </path>
+                </svg></a>
+                <a href="https://www.facebook.com/share/19zQztW9K6/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28" viewBox="0 0 48 48">
+                    <path fill="#039be5" d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z"></path>
+                    <path fill="#fff"
+                        d="M26.572,29.036h4.917l0.772-4.995h-5.69v-2.73c0-2.075,0.678-3.915,2.619-3.915h3.119v-4.359c-0.548-0.074-1.707-0.236-3.897-0.236c-4.573,0-7.254,2.415-7.254,7.917v3.323h-4.701v4.995h4.701v13.729C22.089,42.905,23.032,43,24,43c0.875,0,1.729-0.08,2.572-0.194V29.036z">
+                    </path>
+                </a></div>
+            </div>
         </div>
     </footer>
 

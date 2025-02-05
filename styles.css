@@ -195,12 +195,12 @@ nav ul li::before {
     left: 0;
     width: 0%;
     height: 3px;
-    background-color: aqua;
+    background-color: rgb(255, 255, 125);
     transition: width 0.3s ease-in-out;
 }
 
 nav ul li:hover {
-    color: aqua;
+    color: rgb(255, 255, 125);
     /* Text color change */
 }
 
@@ -234,12 +234,12 @@ nav div li::before {
     left: 0;
     width: 0%;
     height: 3px;
-    background-color: aqua;
+    background-color: rgb(255, 255, 125);
     transition: width 0.3s ease-in-out;
 }
 
 nav div li:hover {
-    color: aqua;
+    color: rgb(255, 255, 125);
     /* Text color change */
 }
 
@@ -389,7 +389,7 @@ nav div li a {
     top: 0;
     width: 0;
     height: 100%;
-    background-color: aqua;
+    background-color: rgb(255, 255, 125);
     transition: width 0.3s ease-in-out;
     z-index: 0;
 }
@@ -517,7 +517,7 @@ nav div li a {
     width: 0;
     height: 100%;
     /* width: 100%; */
-    background-color: aqua;
+    background-color: rgb(255, 255, 125);
     color: #333;
     transition: width 0.3s ease-in-out;
     z-index: 0;
@@ -897,7 +897,7 @@ a {
     top: 0;
     width: 0;
     height: 100%;
-    background-color: aqua;
+    background-color: rgb(255, 255, 125);
     transition: width 0.3s ease-in-out;
     z-index: 0;
 }
@@ -911,3 +911,62 @@ a {
     position: relative;
     z-index: 1;
 }
+
+
+
+
+
+.download-cv a {
+    color: darkslategray;
+    position: relative;
+    background-color: rgb(255, 255, 188);
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+}
+
+.download-cv a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgb(255, 255, 125);
+    transition: width 0.3s ease-in-out;
+    z-index: 0;
+    border-radius: 8px;
+}
+
+.download-cv a:hover::before {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.download-cv a button{
+    position: relative;
+    z-index: 1;
+    border-radius: 8px;
+}
+
+.download-button {
+  /* background-color: none; */
+  background-color: transparent;
+  color: darkslategray;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+/* .download-button:hover {
+  background-color: #0056b3;
+} */
